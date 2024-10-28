@@ -1,10 +1,19 @@
 <template>
   <div>
     <h1>Propiedad Conmutada</h1>
-    <ul>
+    <button @click="getJuegosAzules()">
+        Juegos azules
+    </button>
+    <div style="border: 1px solid blue" v-html="html">
+
+    </div>
+
+
+    <!-- <ul>
         <li v-for="game in juegosRojos" :key="game" v-html="game">
         </li>
-    </ul>
+    </ul> -->
+    
   </div>
 </template>
 
@@ -14,12 +23,18 @@ export default {
 
     data(){
         return{
+            html:"",
             juegos: ["GTA V", "Minecraft", "Perinola", "Yoyo", "Papagayo"]
         }
     },
 
-    method:{
-
+    methods:{
+        getJuegosAzules(){
+            //EL METODO NO DEVUELVE NADA, NECESITAMOS TENER UN DIBUJO
+            for(var juego of this.juegos){
+                this.html += "<h4 style='color:blue'>"+ juego +"</h4>"
+            }
+        }
     },
 
     computed:{
