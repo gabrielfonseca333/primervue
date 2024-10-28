@@ -1,28 +1,29 @@
 <template>
   <div>
-    <HolaMundo />
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <h1 style="color: blue">
+      Titulo estático de app
+    </h1>
+    <MenuComponent/>
+    <hr/>
+      <router-view></router-view>
+    <hr/>
+    
+    
   </div>
 </template>
 
 <script>
-import HolaMundo from "./components/HolaMundo.vue";
+import MenuComponent from './components/MenuComponent.vue';
 
 export default {
   name: "App",
   components: {
-    HolaMundo,
-  },
+     MenuComponent
+  }
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "./assets/estilos";
+
 </style>
